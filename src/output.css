@@ -7,8 +7,15 @@
       "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
     --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
       "Courier New", monospace;
+    --color-sky-500: oklch(68.5% 0.169 237.323);
+    --color-sky-700: oklch(50% 0.134 242.749);
+    --color-white: #fff;
+    --spacing: 0.25rem;
+    --text-sm: 0.875rem;
+    --text-sm--line-height: calc(1.25 / 0.875);
     --text-3xl: 1.875rem;
     --text-3xl--line-height: calc(2.25 / 1.875);
+    --font-weight-semibold: 600;
     --font-weight-bold: 700;
     --default-font-family: var(--font-sans);
     --default-mono-font-family: var(--font-mono);
@@ -160,17 +167,55 @@
   }
 }
 @layer utilities {
+  .rounded-full {
+    border-radius: calc(infinity * 1px);
+  }
+  .bg-sky-500 {
+    background-color: var(--color-sky-500);
+  }
+  .px-5 {
+    padding-inline: calc(var(--spacing) * 5);
+  }
+  .py-2 {
+    padding-block: calc(var(--spacing) * 2);
+  }
   .text-3xl {
     font-size: var(--text-3xl);
     line-height: var(--tw-leading, var(--text-3xl--line-height));
+  }
+  .text-sm {
+    font-size: var(--text-sm);
+    line-height: var(--tw-leading, var(--text-sm--line-height));
+  }
+  .leading-5 {
+    --tw-leading: calc(var(--spacing) * 5);
+    line-height: calc(var(--spacing) * 5);
   }
   .font-bold {
     --tw-font-weight: var(--font-weight-bold);
     font-weight: var(--font-weight-bold);
   }
+  .font-semibold {
+    --tw-font-weight: var(--font-weight-semibold);
+    font-weight: var(--font-weight-semibold);
+  }
+  .text-white {
+    color: var(--color-white);
+  }
   .underline {
     text-decoration-line: underline;
   }
+  .hover\:bg-sky-700 {
+    &:hover {
+      @media (hover: hover) {
+        background-color: var(--color-sky-700);
+      }
+    }
+  }
+}
+@property --tw-leading {
+  syntax: "*";
+  inherits: false;
 }
 @property --tw-font-weight {
   syntax: "*";
@@ -179,6 +224,7 @@
 @layer properties {
   @supports ((-webkit-hyphens: none) and (not (margin-trim: inline))) or ((-moz-orient: inline) and (not (color:rgb(from red r g b)))) {
     *, ::before, ::after, ::backdrop {
+      --tw-leading: initial;
       --tw-font-weight: initial;
     }
   }
