@@ -20,8 +20,27 @@
 
     <!-- CSS files here -->
     <link rel="stylesheet" href="css/styles.css">
+    <script src="js/script.js"></script>
 </head>
 <body>
-    
+    <h2>Conversor de Cores</h2>
+
+    <div>
+    <h3>HEX para RGB</h3>
+    <input type="text" id="hexInput" placeholder="#000000">
+    <button onclick="hexToRgb()">Converter para RGB</button>
+    </div>
+
+    <div>
+    <h3>RGB para HEX</h3>
+    <input type="number" id="red" placeholder="Red (0-255)" min="0" max="255">
+    <input type="number" id="green" placeholder="Green (0-255)" min="0" max="255">
+    <input type="number" id="blue" placeholder="Blue (0-255)" min="0" max="255">
+    <button onclick="rgbToHex()">Converter para HEX</button>
+    </div>
+
+    <div id="outputArea"></div>
+
+    <script src="js/script.js"></script>
 </body>
 </html>
