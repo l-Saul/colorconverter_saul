@@ -1,2 +1,2 @@
-# saul_colorconverter
+# Color Converter
 Color Converter Hex to RGB
