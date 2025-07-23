@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Color Converter</title>
+
+    <!-- Search Engine Optimization -->
+    <meta name="description" content="Online tool to convert HEX colors to RGB quickly and accurately. Perfect for developers and designers.">
+    <meta name="author" content="Luis Henrique Engel Saul">
+    <meta name="keywords" content="Color Converter, HEX to RGB, Color Tool, Web Development, Design, RGB, HEX">
+
+    <!-- Open Graph Protocol -->
+    <meta property="og:title" content="Color Converter">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content= "https://l-saul.github.io/colorconverter_saul/">
+    <meta property="og:image" content="https://l-saul.github.io/portfolio/imagens/Portfolio_img/Logo_LuisSaul.png">
+    <meta property="og:description" content="Convert HEX to RGB and RGB to HEX instantly. A simple and efficient tool for developers and designers.">
+    <meta property="og:locale" content="en_US">
+
+    <!-- CSS files here -->
+    <link rel="stylesheet" href="css/styles.css">
+
+    <!-- JS files here -->
+    <script src="js/script.js"></script>
+
+    <!-- Tailwind files here -->
+    <link href="./output.css" rel="stylesheet">
+</head>
+<body>
+    <h1 class="text-3xl font-bold underline">
+        Hello world!
+    </h1>
+
+    <h2>Conversor de Cores</h2>
+
+    <div>
+    <h3>HEX para RGB</h3>
+    <input type="text" id="hexInput" placeholder="#000000">
+    <button onclick="hexToRgb()">Converter para RGB</button>
+    </div>
+
+    <div>
+    <h3>RGB para HEX</h3>
+    <input type="number" id="red" placeholder="Red (0-255)" min="0" max="255">
+    <input type="number" id="green" placeholder="Green (0-255)" min="0" max="255">
+    <input type="number" id="blue" placeholder="Blue (0-255)" min="0" max="255">
+    <button onclick="rgbToHex()">Converter para HEX</button>
+    </div>
+
+    <div id="outputArea"></div>
+
+    <script src="function/script.js"></script>
+</body>
+</html>
