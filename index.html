@@ -31,27 +31,35 @@
     <h1 class="text-3xl font-bold mb-8 text-gray-800">Conversor de Cores</h1>
 
     <div class="grid grid-cols-1 md:grid-cols-2 gap-6 w-full max-w-4xl">
-        
         <!-- HEX to RGB -->
         <div class="bg-white p-6 rounded-xl shadow-lg">
             <h2 class="text-xl font-semibold mb-4">HEX → RGB</h2>
-            <input id="hexInput" type="text" placeholder="#RRGGBB" class="border rounded-lg w-full p-2 mb-4 focus:outline-none focus:ring-2 focus:ring-blue-400">
-            <button onclick="hexToRgb()" class="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-lg">Converter</button>
+            <input id="hexInput" type="text" placeholder="#RRGGBB" 
+                class="border rounded-lg w-full p-2 mb-4 focus:outline-none focus:ring-2 focus:ring-blue-400">
+            <button onclick="hexToRgb()" 
+                class="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-lg w-full mb-4">
+                Converter
+            </button>
+            <div id="outputHex" class="p-3 bg-gray-50 rounded-lg text-gray-800"></div>
         </div>
-
         <!-- RGB to HEX -->
         <div class="bg-white p-6 rounded-xl shadow-lg">
             <h2 class="text-xl font-semibold mb-4">RGB → HEX</h2>
             <div class="flex gap-2 mb-4">
-                <input id="red" type="number" placeholder="R" class="border rounded-lg w-full p-2 focus:outline-none focus:ring-2 focus:ring-green-400">
-                <input id="green" type="number" placeholder="G" class="border rounded-lg w-full p-2 focus:outline-none focus:ring-2 focus:ring-green-400">
-                <input id="blue" type="number" placeholder="B" class="border rounded-lg w-full p-2 focus:outline-none focus:ring-2 focus:ring-green-400">
+                <input id="red" type="number" placeholder="R" 
+                    class="border rounded-lg w-full p-2 focus:outline-none focus:ring-2 focus:ring-green-400">
+                <input id="green" type="number" placeholder="G" 
+                    class="border rounded-lg w-full p-2 focus:outline-none focus:ring-2 focus:ring-green-400">
+                <input id="blue" type="number" placeholder="B" 
+                    class="border rounded-lg w-full p-2 focus:outline-none focus:ring-2 focus:ring-green-400">
             </div>
-            <button onclick="rgbToHex()" class="bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded-lg">Converter</button>
+            <button onclick="rgbToHex()" 
+                class="bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded-lg w-full mb-4">
+                Converter
+            </button>
+            <div id="outputRgb" class="p-3 bg-gray-50 rounded-lg text-gray-800"></div>
         </div>
     </div>
-
-    <!-- Área de resultado -->
-    <div id="outputArea" class="mt-6 p-4 bg-white rounded-xl shadow-lg w-full max-w-4xl text-center text-gray-800 font-medium"></div>
+    <script src="function/script.js"></script>
 </body>
 </html>
