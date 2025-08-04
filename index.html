@@ -26,31 +26,32 @@
     <link href="src/output.css" rel="stylesheet">
 </head>
 
-<body>
-    <h1 class="text-3xl font-bold underline">
-        Hello world!
-    </h1>
+<body class="bg-gray-100 min-h-screen flex flex-col items-center justify-center p-6">
 
-    <button class="rounded-full bg-sky-500 px-5 py-2 text-sm leading-5 font-semibold text-white hover:bg-sky-700">Save changes</button>
+    <h1 class="text-3xl font-bold mb-8 text-gray-800">Conversor de Cores</h1>
 
-    <h2>Conversor de Cores</h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 w-full max-w-4xl">
+        
+        <!-- HEX to RGB -->
+        <div class="bg-white p-6 rounded-xl shadow-lg">
+            <h2 class="text-xl font-semibold mb-4">HEX → RGB</h2>
+            <input id="hexInput" type="text" placeholder="#RRGGBB" class="border rounded-lg w-full p-2 mb-4 focus:outline-none focus:ring-2 focus:ring-blue-400">
+            <button onclick="hexToRgb()" class="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-lg">Converter</button>
+        </div>
 
-    <div>
-    <h3>HEX para RGB</h3>
-    <input type="text" id="hexInput" placeholder="#000000">
-    <button onclick="hexToRgb()">Converter para RGB</button>
+        <!-- RGB to HEX -->
+        <div class="bg-white p-6 rounded-xl shadow-lg">
+            <h2 class="text-xl font-semibold mb-4">RGB → HEX</h2>
+            <div class="flex gap-2 mb-4">
+                <input id="red" type="number" placeholder="R" class="border rounded-lg w-full p-2 focus:outline-none focus:ring-2 focus:ring-green-400">
+                <input id="green" type="number" placeholder="G" class="border rounded-lg w-full p-2 focus:outline-none focus:ring-2 focus:ring-green-400">
+                <input id="blue" type="number" placeholder="B" class="border rounded-lg w-full p-2 focus:outline-none focus:ring-2 focus:ring-green-400">
+            </div>
+            <button onclick="rgbToHex()" class="bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded-lg">Converter</button>
+        </div>
     </div>
 
-    <div>
-    <h3>RGB para HEX</h3>
-    <input type="number" id="red" placeholder="Red (0-255)" min="0" max="255">
-    <input type="number" id="green" placeholder="Green (0-255)" min="0" max="255">
-    <input type="number" id="blue" placeholder="Blue (0-255)" min="0" max="255">
-    <button onclick="rgbToHex()">Converter para HEX</button>
-    </div>
-
-    <div id="outputArea"></div>
-
-    <script src="function/script.js"></script>
+    <!-- Área de resultado -->
+    <div id="outputArea" class="mt-6 p-4 bg-white rounded-xl shadow-lg w-full max-w-4xl text-center text-gray-800 font-medium"></div>
 </body>
 </html>
