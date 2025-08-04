@@ -23,8 +23,9 @@
     <link href="src/output.css" rel="stylesheet">
 </head>
 
-<body class="bg-gray-900 text-white min-h-screen flex items-center justify-center p-4 font-sans">
-  <div class="w-full max-w-4xl grid grid-cols-1 md:grid-cols-2 gap-8">
+<body class="bg-gray-900 text-white min-h-screen flex flex-col items-center justify-center p-4 font-sans">
+  
+  <div class="w-full max-w-4xl grid grid-cols-1 md:grid-cols-2 gap-8 mt-16">
 
     <div class="bg-gray-800 p-8 rounded-lg shadow-lg">
       <h2 class="text-3xl font-bold mb-6 text-center text-teal-400">HEX to RGB</h2>
@@ -32,9 +33,12 @@
         <label for="hexInput" class="block text-gray-400 mb-2">HEX Code:</label>
         <input type="text" id="hexInput" placeholder="#FFFFFF" class="w-full p-3 bg-gray-700 border border-gray-600 rounded-md focus:outline-none focus:ring-2 focus:ring-teal-400 text-lg">
       </div>
-      <button onclick="hexToRgb()" class="w-full bg-teal-500 hover:bg-teal-600 text-white font-bold py-3 px-4 rounded-md transition duration-300 ease-in-out">
+      <button onclick="hexToRgb()" class="w-full bg-teal-500 hover:bg-teal-600 text-white font-bold py-3 px-4 rounded-md transition duration-300 ease-in-out mb-4">
         Convert
       </button>
+      <div id="outputHexToRgb" class="bg-gray-700 text-gray-300 p-6 rounded-md min-h-[100px] flex items-center justify-center text-lg leading-relaxed text-center">
+        Result will appear here.
+      </div>
     </div>
 
     <div class="bg-gray-800 p-8 rounded-lg shadow-lg">
@@ -53,18 +57,19 @@
           <input type="number" id="blue" placeholder="0-255" min="0" max="255" class="w-full p-3 bg-gray-700 border border-gray-600 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-400 text-lg">
         </div>
       </div>
-      <button onclick="rgbToHex()" class="w-full bg-indigo-500 hover:bg-indigo-600 text-white font-bold py-3 px-4 rounded-md transition duration-300 ease-in-out">
+      <button onclick="rgbToHex()" class="w-full bg-indigo-500 hover:bg-indigo-600 text-white font-bold py-3 px-4 rounded-md transition duration-300 ease-in-out mb-4">
         Convert
       </button>
-    </div>
-
-    <div class="md:col-span-2 bg-gray-800 p-8 rounded-lg shadow-lg text-center mt-4">
-      <h3 class="text-2xl font-bold mb-4">Result:</h3>
-      <div id="outputArea" class="bg-gray-700 text-gray-300 p-6 rounded-md min-h-[100px] flex items-center justify-center text-lg leading-relaxed">
-        Your conversion result will appear here.
+      <div id="outputRgbToHex" class="bg-gray-700 text-gray-300 p-6 rounded-md min-h-[100px] flex items-center justify-center text-lg leading-relaxed text-center">
+        Result will appear here.
       </div>
     </div>
+    
   </div>
+
+    <footer class="w-full text-center p-4">
+    <p class="text-sm text-gray-500">© 2025 Desenvolvido por Luis Henrique Engel Saul.</p>
+  </footer>
 
   <script src="function/script.js"></script>
 </body>
