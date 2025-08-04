@@ -231,6 +231,9 @@
   .grid {
     display: grid;
   }
+  .h-12 {
+    height: calc(var(--spacing) * 12);
+  }
   .min-h-\[100px\] {
     min-height: 100px;
   }

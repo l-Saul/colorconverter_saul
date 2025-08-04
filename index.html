@@ -24,53 +24,50 @@
 </head>
 
 <body class="bg-gray-900 text-white min-h-screen flex flex-col items-center justify-center p-4 font-sans">
-  
-  <div class="w-full max-w-4xl grid grid-cols-1 md:grid-cols-2 gap-8 mt-16">
+    <div class="w-full max-w-4xl grid grid-cols-1 md:grid-cols-2 gap-8 mt-16">
+        <div class="bg-gray-800 p-8 rounded-lg shadow-lg">
+            <h2 class="text-3xl font-bold mb-6 text-center text-teal-400">HEX to RGB</h2>
+            <div class="mb-4">
+                <label for="hexInput" class="block text-gray-400 mb-2">HEX Code:</label>
+                <input type="text" id="hexInput" placeholder="#FFFFFF" class="w-full p-3 bg-gray-700 border border-gray-600 rounded-md focus:outline-none focus:ring-2 focus:ring-teal-400 text-lg">
+            </div>
+            <button onclick="hexToRgb()" class="w-full bg-teal-500 hover:bg-teal-600 text-white font-bold py-3 px-4 rounded-md transition duration-300 ease-in-out mb-4">
+                Convert
+            </button>
+            <div id="outputHexToRgb" class="bg-gray-700 text-gray-300 p-6 rounded-md min-h-[100px] flex items-center justify-center text-lg leading-relaxed text-center">
+                Result will appear here.
+            </div>
+        </div>
 
-    <div class="bg-gray-800 p-8 rounded-lg shadow-lg">
-      <h2 class="text-3xl font-bold mb-6 text-center text-teal-400">HEX to RGB</h2>
-      <div class="mb-4">
-        <label for="hexInput" class="block text-gray-400 mb-2">HEX Code:</label>
-        <input type="text" id="hexInput" placeholder="#FFFFFF" class="w-full p-3 bg-gray-700 border border-gray-600 rounded-md focus:outline-none focus:ring-2 focus:ring-teal-400 text-lg">
-      </div>
-      <button onclick="hexToRgb()" class="w-full bg-teal-500 hover:bg-teal-600 text-white font-bold py-3 px-4 rounded-md transition duration-300 ease-in-out mb-4">
-        Convert
-      </button>
-      <div id="outputHexToRgb" class="bg-gray-700 text-gray-300 p-6 rounded-md min-h-[100px] flex items-center justify-center text-lg leading-relaxed text-center">
-        Result will appear here.
-      </div>
+        <div class="bg-gray-800 p-8 rounded-lg shadow-lg">
+            <h2 class="text-3xl font-bold mb-6 text-center text-indigo-400">RGB to HEX</h2>
+            <div class="grid grid-cols-3 gap-4 mb-4">
+                <div>
+                    <label for="red" class="block text-gray-400 mb-2">Red:</label>
+                    <input type="number" id="red" placeholder="0-255" min="0" max="255" class="w-full p-3 bg-gray-700 border border-gray-600 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-400 text-lg">
+                </div>
+                <div>
+                    <label for="green" class="block text-gray-400 mb-2">Green:</label>
+                    <input type="number" id="green" placeholder="0-255" min="0" max="255" class="w-full p-3 bg-gray-700 border border-gray-600 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-400 text-lg">
+                </div>
+                <div>
+                    <label for="blue" class="block text-gray-400 mb-2">Blue:</label>
+                    <input type="number" id="blue" placeholder="0-255" min="0" max="255" class="w-full p-3 bg-gray-700 border border-gray-600 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-400 text-lg">
+                </div>
+            </div>
+            <button onclick="rgbToHex()" class="w-full bg-indigo-500 hover:bg-indigo-600 text-white font-bold py-3 px-4 rounded-md transition duration-300 ease-in-out mb-4">
+                Convert
+            </button>
+            <div id="outputRgbToHex" class="bg-gray-700 text-gray-300 p-6 rounded-md min-h-[100px] flex items-center justify-center text-lg leading-relaxed text-center">
+                Result will appear here.
+            </div>
+        </div>
     </div>
-
-    <div class="bg-gray-800 p-8 rounded-lg shadow-lg">
-      <h2 class="text-3xl font-bold mb-6 text-center text-indigo-400">RGB to HEX</h2>
-      <div class="grid grid-cols-3 gap-4 mb-4">
-        <div>
-          <label for="red" class="block text-gray-400 mb-2">Red:</label>
-          <input type="number" id="red" placeholder="0-255" min="0" max="255" class="w-full p-3 bg-gray-700 border border-gray-600 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-400 text-lg">
-        </div>
-        <div>
-          <label for="green" class="block text-gray-400 mb-2">Green:</label>
-          <input type="number" id="green" placeholder="0-255" min="0" max="255" class="w-full p-3 bg-gray-700 border border-gray-600 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-400 text-lg">
-        </div>
-        <div>
-          <label for="blue" class="block text-gray-400 mb-2">Blue:</label>
-          <input type="number" id="blue" placeholder="0-255" min="0" max="255" class="w-full p-3 bg-gray-700 border border-gray-600 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-400 text-lg">
-        </div>
-      </div>
-      <button onclick="rgbToHex()" class="w-full bg-indigo-500 hover:bg-indigo-600 text-white font-bold py-3 px-4 rounded-md transition duration-300 ease-in-out mb-4">
-        Convert
-      </button>
-      <div id="outputRgbToHex" class="bg-gray-700 text-gray-300 p-6 rounded-md min-h-[100px] flex items-center justify-center text-lg leading-relaxed text-center">
-        Result will appear here.
-      </div>
-    </div>
-    
-  </div>
 
     <footer class="w-full text-center p-4">
-    <p class="text-sm text-gray-500">© 2025 Desenvolvido por Luis Henrique Engel Saul.</p>
-  </footer>
+        <p class="text-sm text-gray-500">© 2025 Created by Luis Henrique Engel Saul.</p>
+    </footer>
 
-  <script src="function/script.js"></script>
+    <script src="function/script.js"></script>
 </body>
 </html>
