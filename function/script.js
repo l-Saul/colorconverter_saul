@@ -1,45 +1,41 @@
 function hexToRgb() {
-    const hex = document.getElementById("hexInput").value.trim();
-    const output = document.getElementById("outputHexToRgb");
+    const hex = document.getElementById('hexInput').value.trim();
+    const output = document.getElementById('outputHexToRgb');
 
-    if (!(hex.startsWith("#") && hex.length === 7)) {
-        output.textContent = "Erro: Código HEX deve começar com '#' e ter 6 caracteres.";
+    if (!/^#?[0-9A-Fa-f]{6}$/.test(hex)) {
+        output.textContent = "Invalid HEX code.";
+        output.style.backgroundColor = "transparent";
         return;
     }
 
-    const r = parseInt(hex.slice(1, 3), 16);
-    const g = parseInt(hex.slice(3, 5), 16);
-    const b = parseInt(hex.slice(5, 7), 16);
+    let cleanHex = hex.replace('#', '');
+    let r = parseInt(cleanHex.substring(0, 2), 16);
+    let g = parseInt(cleanHex.substring(2, 4), 16);
+    let b = parseInt(cleanHex.substring(4, 6), 16);
 
-    output.innerHTML = `
-    <strong>RGB:</strong> rgb(${r}, ${g}, ${b})<br><br>
-    <strong>Red:</strong> ${r}<br>
-    <strong>Green:</strong> ${g}<br>
-    <strong>Blue:</strong> ${b}
-    `;
+    output.textContent = `RGB(${r}, ${g}, ${b})`;
+    output.style.backgroundColor = `rgb(${r}, ${g}, ${b})`;
+    output.style.color = (r*0.299 + g*0.587 + b*0.114) > 150 ? "black" : "white"; // contraste
 }
 
 function rgbToHex() {
-    const r = parseInt(document.getElementById("red").value);
-    const g = parseInt(document.getElementById("green").value);
-    const b = parseInt(document.getElementById("blue").value);
-    const output = document.getElementById("outputRgbToHex");
+    const r = parseInt(document.getElementById('red').value);
+    const g = parseInt(document.getElementById('green').value);
+    const b = parseInt(document.getElementById('blue').value);
+    const output = document.getElementById('outputRgbToHex');
 
-    if (
-        isNaN(r) || r < 0 || r > 255 ||
-        isNaN(g) || g < 0 || g > 255 ||
-        isNaN(b) || b < 0 || b > 255
-    ) {
-        output.textContent = "Erro: Todos os valores RGB devem estar entre 0 e 255.";
+    if ([r, g, b].some(v => isNaN(v) || v < 0 || v > 255)) {
+        output.textContent = "Invalid RGB values.";
+        output.style.backgroundColor = "transparent";
         return;
     }
 
-    const hex = "#" +
-        r.toString(16).padStart(2, "0").toUpperCase() +
-        g.toString(16).padStart(2, "0").toUpperCase() +
-        b.toString(16).padStart(2, "0").toUpperCase();
+    const hex = "#" + 
+        r.toString(16).padStart(2, '0') + 
+        g.toString(16).padStart(2, '0') + 
+        b.toString(16).padStart(2, '0');
 
-    output.innerHTML = `
-    <strong>HEX:</strong> ${hex}
-    `;
+    output.textContent = hex.toUpperCase();
+    output.style.backgroundColor = `rgb(${r}, ${g}, ${b})`;
+    output.style.color = (r*0.299 + g*0.587 + b*0.114) > 150 ? "black" : "white"; // contraste
 }
