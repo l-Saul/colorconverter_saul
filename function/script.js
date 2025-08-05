@@ -15,7 +15,7 @@ function hexToRgb() {
 
     output.textContent = `RGB(${r}, ${g}, ${b})`;
     output.style.backgroundColor = `rgb(${r}, ${g}, ${b})`;
-    output.style.color = (r*0.299 + g*0.587 + b*0.114) > 150 ? "black" : "white"; // contraste
+    output.style.color = (r*0.299 + g*0.587 + b*0.114) > 150 ? "black" : "white";
 }
 
 function rgbToHex() {
@@ -37,5 +37,5 @@ function rgbToHex() {
 
     output.textContent = hex.toUpperCase();
     output.style.backgroundColor = `rgb(${r}, ${g}, ${b})`;
-    output.style.color = (r*0.299 + g*0.587 + b*0.114) > 150 ? "black" : "white"; // contraste
+    output.style.color = (r*0.299 + g*0.587 + b*0.114) > 150 ? "black" : "white";
 }
